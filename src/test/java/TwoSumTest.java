@@ -9,52 +9,23 @@ public class TwoSumTest {
 
     @Test
     public void test_bruteForce() {
-        int[] nums = generateRandomNumbers(20);
+        int[] nums = TestUtils.generateRandomNumbers(20);
         int testSum = 10;
-        printArray("numbers generated", nums, true);
+        TestUtils.printArray("numbers generated", nums, true);
         int[] result = target.bruteForce(nums, testSum);
         assert result != null;
         assert (nums[result[0]] + nums[result[0]]) == testSum;
-        printArray("Result", result, false);
+        TestUtils.printArray("Result", result, false);
     }
 
     @Test
     public void test_myGarbageSolution() {
-        int[] nums = generateRandomNumbers(20);
+        int[] nums = TestUtils.generateRandomNumbers(20);
         int testSum = 10;
-        printArray("numbers generated", nums, true);
+        TestUtils.printArray("numbers generated", nums, true);
         int[] result = target.myGarbageSolution(nums, testSum);
         assert result != null;
         assert (nums[result[0]] + nums[result[0]]) == testSum;
-        printArray("Result", result, false);
-    }
-
-    int[] generateRandomNumbers(int desiredArrayLength) {
-        int[] nums = new int[desiredArrayLength];
-        Set<Integer> distinctNums = new HashSet<>(desiredArrayLength);
-        int i = 0;
-        do {
-            // The code to generate a random integer value between a specified range is this.
-            // https://dzone.com/articles/random-number-generation-in-java
-            int randomNumber = (int) (Math.random() * ((20 - 1) + 1)) + 1;
-            if (distinctNums.add(randomNumber)) {
-                nums[i] = randomNumber;
-            }
-            i++;
-        } while (i < desiredArrayLength) ;
-
-        return nums;
-    }
-
-    void printArray(String description, int[] result, boolean printIndx) {
-        System.out.print(description + ": ");
-        for (int i = 0; i < result.length; i++) {
-            if (printIndx) {
-                System.out.print("["+i+"]: "+result[i] + ", ");
-            } else {
-                System.out.print(result[i] + ", ");
-            }
-        }
-        System.out.println();
+        TestUtils.printArray("Result", result, false);
     }
 }
