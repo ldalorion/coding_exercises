@@ -10,9 +10,22 @@ public class TwoSumTest {
     @Test
     public void test_bruteForce() {
         int[] nums = generateRandomNumbers(20);
+        int testSum = 10;
         printArray("numbers generated", nums, true);
-        int[] result = target.bruteForce(nums, 10);
+        int[] result = target.bruteForce(nums, testSum);
         assert result != null;
+        assert (nums[result[0]] + nums[result[0]]) == testSum;
+        printArray("Result", result, false);
+    }
+
+    @Test
+    public void test_myGarbageSolution() {
+        int[] nums = generateRandomNumbers(20);
+        int testSum = 10;
+        printArray("numbers generated", nums, true);
+        int[] result = target.myGarbageSolution(nums, testSum);
+        assert result != null;
+        assert (nums[result[0]] + nums[result[0]]) == testSum;
         printArray("Result", result, false);
     }
 
