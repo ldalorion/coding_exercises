@@ -5,6 +5,9 @@ public class DetermineBalance {
      * ((())) - balanced
      * {)} - not balanced
      * {({()})} - balanced
+     * {}() - balanced
+     * ({()}) - balanced
+     * {}( - not balanced
      */
     boolean isBalanced(String string) {
         return false;
