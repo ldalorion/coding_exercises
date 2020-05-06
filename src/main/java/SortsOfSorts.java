@@ -2,13 +2,13 @@ public class SortsOfSorts {
 
     int[] sortInt(int[] nums) {
         boolean sorted = true;
-        for (int i=0; i < nums.length-1; i++) {
-            if (nums[i] > nums[i+1]) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
                 sorted = false;
                 swap(nums, i);
             }
         }
-        if (sorted){
+        if (sorted) {
             return nums;
         } else {
             return sortInt(nums);
@@ -17,7 +17,7 @@ public class SortsOfSorts {
 
     void swap(int[] array, int position) {
         int largerNumber = array[position];
-        array[position] = array[position+1];
-        array[position+1] = largerNumber;
+        array[position] = array[position + 1];
+        array[position + 1] = largerNumber;
     }
 }
