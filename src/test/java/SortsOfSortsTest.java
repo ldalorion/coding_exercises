@@ -12,6 +12,16 @@ public class SortsOfSortsTest {
         assert isSorted(result);
     }
 
+    @Test
+    public void test_anotherMadeUpSort() {
+        SortsOfSorts target = new SortsOfSorts();
+        int[] testArray = TestUtils.generateRandomNumbers(10);
+        TestUtils.printArray("Before sort ", testArray, false);
+        int[] result = target.anotherSort(testArray);
+        TestUtils.printArray("After sort ", result, false);
+        assert isSorted(result);
+    }
+
     boolean isSorted(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             if (numbers[i - 1] > numbers[i]) {
