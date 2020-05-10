@@ -1,9 +1,3 @@
-
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Given a list of n integers arr[0..(n-1)], determine the number of different pairs of elements within it which sum to k.
  * If an integer appears in the list multiple times, each copy is considered to be different;

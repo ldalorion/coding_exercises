@@ -43,4 +43,19 @@ public class SortsOfSorts {
     int[] subArray(int[] nums, int x, int y) {
         return Arrays.copyOfRange(nums, x, y);
     }
+
+    void yetAnotherSort(int[] arrayToSort) {
+        for (int i=0; i < arrayToSort.length-1; i++) {
+            if (arrayToSort[i] > arrayToSort[i+1]) {
+                yetAnotherSwap(arrayToSort, i, i+1);
+                yetAnotherSort(arrayToSort);
+            }
+        }
+    }
+
+    void yetAnotherSwap(int[] array, int indx, int indx2) {
+        int temp = array[indx];
+        array[indx] = array[indx2];
+        array[indx2] = temp;
+    }
 }

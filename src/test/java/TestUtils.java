@@ -15,9 +15,21 @@ public class TestUtils {
                 nums[i] = randomNumber;
             }
             i++;
-        } while (i < desiredArrayLength) ;
+        } while (i < desiredArrayLength);
 
         return nums;
     }
 
+    static boolean theseShitsAreEqual(int[] a, int[] b) {
+        if (a.length != b.length) {
+            return false;
+        } else {
+            for (int i = 0; i < a.length; i++) {
+                 if (a[i] != b[i]) {
+                     return false;
+                 }
+            }
+        }
+        return true;
+    }
 }

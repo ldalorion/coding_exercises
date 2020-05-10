@@ -2,9 +2,10 @@ import org.junit.Test;
 
 public class SortsOfSortsTest {
 
+    SortsOfSorts target = new SortsOfSorts();
+
     @Test
     public void test_myMadeUpSort() {
-        SortsOfSorts target = new SortsOfSorts();
         int[] testArray = TestUtils.generateRandomNumbers(10);
         CodeExerciseUtil.printArray("Before sort ", testArray, false);
         int[] result = target.sortInt(testArray);
@@ -14,12 +15,20 @@ public class SortsOfSortsTest {
 
     @Test
     public void test_anotherMadeUpSort() {
-        SortsOfSorts target = new SortsOfSorts();
         int[] testArray = TestUtils.generateRandomNumbers(10);
         CodeExerciseUtil.printArray("Before sort ", testArray, false);
         int[] result = target.anotherSort(testArray);
         CodeExerciseUtil.printArray("After sort ", result, false);
         assert isSorted(result);
+    }
+
+    @Test
+    public void test_yetAnotherSort() {
+        int[] testArray = TestUtils.generateRandomNumbers(10);
+        CodeExerciseUtil.printArray("Before sort ", testArray, false);
+        target.yetAnotherSort(testArray);
+        CodeExerciseUtil.printArray("After sort ", testArray, false);
+        assert isSorted(testArray);
     }
 
     boolean isSorted(int[] numbers) {
