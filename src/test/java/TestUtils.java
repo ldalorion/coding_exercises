@@ -20,15 +20,4 @@ public class TestUtils {
         return nums;
     }
 
-    static void printArray(String description, int[] result, boolean printIndx) {
-        System.out.print(description + ": ");
-        for (int i = 0; i < result.length; i++) {
-            if (printIndx) {
-                System.out.print("["+i+"]: "+result[i] + ", ");
-            } else {
-                System.out.print(result[i] + ", ");
-            }
-        }
-        System.out.println();
-    }
 }

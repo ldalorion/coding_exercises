@@ -6,9 +6,9 @@ public class SortsOfSortsTest {
     public void test_myMadeUpSort() {
         SortsOfSorts target = new SortsOfSorts();
         int[] testArray = TestUtils.generateRandomNumbers(10);
-        TestUtils.printArray("Before sort ", testArray, false);
+        CodeExerciseUtil.printArray("Before sort ", testArray, false);
         int[] result = target.sortInt(testArray);
-        TestUtils.printArray("After sort ", result, false);
+        CodeExerciseUtil.printArray("After sort ", result, false);
         assert isSorted(result);
     }
 
@@ -16,9 +16,9 @@ public class SortsOfSortsTest {
     public void test_anotherMadeUpSort() {
         SortsOfSorts target = new SortsOfSorts();
         int[] testArray = TestUtils.generateRandomNumbers(10);
-        TestUtils.printArray("Before sort ", testArray, false);
+        CodeExerciseUtil.printArray("Before sort ", testArray, false);
         int[] result = target.anotherSort(testArray);
-        TestUtils.printArray("After sort ", result, false);
+        CodeExerciseUtil.printArray("After sort ", result, false);
         assert isSorted(result);
     }
 
