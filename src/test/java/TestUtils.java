@@ -32,4 +32,13 @@ public class TestUtils {
         }
         return true;
     }
+
+    static boolean isSorted(int[] numbers) {
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i - 1] > numbers[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

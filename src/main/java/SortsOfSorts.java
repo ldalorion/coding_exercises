@@ -7,7 +7,7 @@ public class SortsOfSorts {
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] > nums[i + 1]) {
                 sorted = false;
-                swap(nums, i);
+                SortUtils.swap(nums, i, i + 1);
             }
         }
         if (sorted) {
@@ -17,27 +17,14 @@ public class SortsOfSorts {
         }
     }
 
-    void swap(int[] array, int position) {
-        int largerNumber = array[position];
-        array[position] = array[position + 1];
-        array[position + 1] = largerNumber;
-    }
-
     int[] anotherSort(int[] nums) {
-
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i-1]>nums[i]) {
-                anotherSwap(nums, i-1, i);
+            if (nums[i - 1] > nums[i]) {
+                SortUtils.swap(nums, i - 1, i);
                 anotherSort(nums);
             }
         }
         return nums;
-    }
-
-    void anotherSwap(int[] num, int indx1, int indx2) {
-        int temp = num[indx1];
-        num[indx1] = num[indx2];
-        num[indx2] = temp;
     }
 
     int[] subArray(int[] nums, int x, int y) {
@@ -45,17 +32,11 @@ public class SortsOfSorts {
     }
 
     void yetAnotherSort(int[] arrayToSort) {
-        for (int i=0; i < arrayToSort.length-1; i++) {
-            if (arrayToSort[i] > arrayToSort[i+1]) {
-                yetAnotherSwap(arrayToSort, i, i+1);
+        for (int i = 0; i < arrayToSort.length - 1; i++) {
+            if (arrayToSort[i] > arrayToSort[i + 1]) {
+                SortUtils.swap(arrayToSort, i, i + 1);
                 yetAnotherSort(arrayToSort);
             }
         }
-    }
-
-    void yetAnotherSwap(int[] array, int indx, int indx2) {
-        int temp = array[indx];
-        array[indx] = array[indx2];
-        array[indx2] = temp;
     }
 }

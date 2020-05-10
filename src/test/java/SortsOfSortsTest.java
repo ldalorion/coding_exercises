@@ -10,7 +10,7 @@ public class SortsOfSortsTest {
         CodeExerciseUtil.printArray("Before sort ", testArray, false);
         int[] result = target.sortInt(testArray);
         CodeExerciseUtil.printArray("After sort ", result, false);
-        assert isSorted(result);
+        assert TestUtils.isSorted(result);
     }
 
     @Test
@@ -19,7 +19,7 @@ public class SortsOfSortsTest {
         CodeExerciseUtil.printArray("Before sort ", testArray, false);
         int[] result = target.anotherSort(testArray);
         CodeExerciseUtil.printArray("After sort ", result, false);
-        assert isSorted(result);
+        assert TestUtils.isSorted(result);
     }
 
     @Test
@@ -28,15 +28,6 @@ public class SortsOfSortsTest {
         CodeExerciseUtil.printArray("Before sort ", testArray, false);
         target.yetAnotherSort(testArray);
         CodeExerciseUtil.printArray("After sort ", testArray, false);
-        assert isSorted(testArray);
-    }
-
-    boolean isSorted(int[] numbers) {
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i - 1] > numbers[i]) {
-                return false;
-            }
-        }
-        return true;
+        assert TestUtils.isSorted(testArray);
     }
 }
