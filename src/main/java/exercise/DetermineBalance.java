@@ -1,3 +1,5 @@
+package exercise;
+
 public class DetermineBalance {
     /**
      * Work on solving that coding exercise with the isBalanced method that determines if a string is balanced.

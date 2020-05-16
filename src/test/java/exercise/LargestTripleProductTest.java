@@ -1,4 +1,8 @@
+package exercise;
+
 import org.junit.Test;
+import utils.CodeExerciseTestUtils;
+import utils.CodeExerciseUtil;
 
 public class LargestTripleProductTest {
 
@@ -16,20 +20,20 @@ public class LargestTripleProductTest {
     public void test_findMaxProduct_input1() {
         int[] actual = target.findMaxProduct(input1);
         CodeExerciseUtil.printArray("Actual output: ", actual, false);
-        assert TestUtils.theseShitsAreEqual(output1, actual);
+        assert CodeExerciseTestUtils .theseShitsAreEqual(output1, actual);
     }
 
     @Test
     public void test_findMaxProduct_input2() {
         int[] actual = target.findMaxProduct(input2);
         CodeExerciseUtil.printArray("Actual output: ", actual, false);
-        assert TestUtils.theseShitsAreEqual(output2, actual);
+        assert CodeExerciseTestUtils.theseShitsAreEqual(output2, actual);
     }
 
     @Test
     public void test_findMaxProduct_input3() {
         int[] actual = target.findMaxProduct(input3);
         CodeExerciseUtil.printArray("Actual output: ", actual, false);
-        assert TestUtils.theseShitsAreEqual(output3, actual);
+        assert CodeExerciseTestUtils .theseShitsAreEqual(output3, actual);
     }
 }

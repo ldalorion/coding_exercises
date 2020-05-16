@@ -1,9 +1,11 @@
+package utils;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class TestUtils {
+public class CodeExerciseTestUtils {
 
-    static int[] generateRandomNumbers(int desiredArrayLength) {
+    public static int[] generateRandomNumbers(int desiredArrayLength) {
         int[] nums = new int[desiredArrayLength];
         Set<Integer> distinctNums = new HashSet<>(desiredArrayLength);
         int i = 0;
@@ -20,7 +22,7 @@ public class TestUtils {
         return nums;
     }
 
-    static boolean theseShitsAreEqual(int[] a, int[] b) {
+    public static boolean theseShitsAreEqual(int[] a, int[] b) {
         if (a.length != b.length) {
             return false;
         } else {
@@ -33,7 +35,7 @@ public class TestUtils {
         return true;
     }
 
-    static boolean isSorted(int[] numbers) {
+    public static boolean isSorted(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             if (numbers[i - 1] > numbers[i]) {
                 return false;

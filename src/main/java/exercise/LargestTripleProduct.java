@@ -1,3 +1,7 @@
+package exercise;
+
+import static utils.CodeExerciseUtil.*;
+
 /**
  * You're given a list of n integers arr[0..(n-1)]. You must compute a list output[0..(n-1)] such that, for each
  * index i (between 0 and n-1, inclusive), output[i] is equal to the product of the three largest elements
@@ -17,8 +21,8 @@ public class LargestTripleProduct {
                 maxProductArray[i] = -1;
             }
             maxProductArray[i + 2] = tripleProduct;
-            System.out.println("Triple Product: " + tripleProduct);
-            CodeExerciseUtil.printArray("Current Max Product Array: ", maxProductArray, false);
+            println("Triple Product: " + tripleProduct);
+            printArray("Current Max Product Array: ", maxProductArray, false);
         }
         return maxProductArray;
     }

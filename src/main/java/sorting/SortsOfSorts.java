@@ -1,4 +1,10 @@
+package sorting;
+
+import utils.SortUtils;
+
 import java.util.Arrays;
+
+import static utils.SortUtils.*;
 
 public class SortsOfSorts {
 
@@ -7,7 +13,7 @@ public class SortsOfSorts {
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] > nums[i + 1]) {
                 sorted = false;
-                SortUtils.swap(nums, i, i + 1);
+                swap(nums, i, i + 1);
             }
         }
         if (sorted) {
@@ -20,7 +26,7 @@ public class SortsOfSorts {
     int[] anotherSort(int[] nums) {
         for (int i = 1; i < nums.length; i++) {
             if (nums[i - 1] > nums[i]) {
-                SortUtils.swap(nums, i - 1, i);
+                swap(nums, i - 1, i);
                 anotherSort(nums);
             }
         }
@@ -34,7 +40,7 @@ public class SortsOfSorts {
     void yetAnotherSort(int[] arrayToSort) {
         for (int i = 0; i < arrayToSort.length - 1; i++) {
             if (arrayToSort[i] > arrayToSort[i + 1]) {
-                SortUtils.swap(arrayToSort, i, i + 1);
+                swap(arrayToSort, i, i + 1);
                 yetAnotherSort(arrayToSort);
             }
         }

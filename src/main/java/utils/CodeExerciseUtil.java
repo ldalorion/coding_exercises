@@ -1,17 +1,27 @@
+package utils;
+
 public class CodeExerciseUtil {
 
     public static void printArray(String description, int[] arrayToPrint, boolean printIndx) {
-        System.out.print(description + ": ");
+        print(description + ": ");
         for (int i = 0; i < arrayToPrint.length; i++) {
             if (printIndx) {
-                System.out.print("[" + i + "]: " + arrayToPrint[i]);
+                print("[" + i + "]: " + arrayToPrint[i]);
             } else {
                 System.out.print(arrayToPrint[i]);
             }
             if (i < arrayToPrint.length - 1) {
-                System.out.print(", ");
+                print(", ");
             }
         }
-        System.out.println();
+        println("");
+    }
+
+    public static void println(String output) {
+        System.out.println(output);
+    }
+
+    public static void print(String output) {
+        System.out.print(output);
     }
 }

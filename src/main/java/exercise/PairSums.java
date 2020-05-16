@@ -1,3 +1,7 @@
+package exercise;
+
+import static utils.CodeExerciseUtil.*;
+
 /**
  * Given a list of n integers arr[0..(n-1)], determine the number of different pairs of elements within it which sum to k.
  * If an integer appears in the list multiple times, each copy is considered to be different;
@@ -15,10 +19,10 @@ public class PairSums {
             int complement = k - arr[i];
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] == complement) {
-                    System.out.println("Complement: " + complement);
-                    System.out.println("arr[" + i + "]: " + arr[i]);
-                    System.out.println("arr[" + j + "]: " + arr[j]);
-                    CodeExerciseUtil.printArray("Current state of arr", arr, true);
+                    println("Complement: " + complement);
+                    println("arr[" + i + "]: " + arr[i]);
+                    println("arr[" + j + "]: " + arr[j]);
+                    printArray("Current state of arr", arr, true);
                     pairs++;
                 }
             }

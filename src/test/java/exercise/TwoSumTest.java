@@ -1,4 +1,8 @@
+package exercise;
+
 import org.junit.Test;
+import utils.CodeExerciseTestUtils;
+import utils.CodeExerciseUtil;
 
 public class TwoSumTest {
 
@@ -6,7 +10,7 @@ public class TwoSumTest {
 
     @Test
     public void test_bruteForce() {
-        int[] nums = TestUtils.generateRandomNumbers(20);
+        int[] nums = CodeExerciseTestUtils.generateRandomNumbers(20);
         int testSum = 10;
         CodeExerciseUtil.printArray("numbers generated", nums, true);
         int[] result = target.bruteForce(nums, testSum);
@@ -17,7 +21,7 @@ public class TwoSumTest {
 
     @Test
     public void test_myGarbageSolution() {
-        int[] nums = TestUtils.generateRandomNumbers(20);
+        int[] nums = CodeExerciseTestUtils .generateRandomNumbers(20);
         int testSum = 10;
         CodeExerciseUtil.printArray("numbers generated", nums, true);
         int[] result = target.myGarbageSolution(nums, testSum);

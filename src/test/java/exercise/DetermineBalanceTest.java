@@ -1,3 +1,5 @@
+package exercise;
+
 import org.junit.Test;
 
 public class DetermineBalanceTest {

@@ -1,3 +1,8 @@
+package sorting;
+
+import static utils.CodeExerciseUtil.*;
+import static utils.SortUtils.*;
+
 public class KnownSorts {
 
     /**
@@ -10,19 +15,19 @@ public class KnownSorts {
      * @param r ending index section of interest
      */
     void selection(int[] a, int l, int r) {
-        CodeExerciseUtil.printArray("Current Array ", a, false);
+        printArray("Current Array ", a, false);
         for (int i = l; i < r; i++) {
             int min = i;
             for (int j = i + 1; j <= r; j++) {
-                if (SortUtils.less(a[j], a[min])) {
+                if (less(a[j], a[min])) {
                     min = j;
                 }
             }
-            System.out.println("i  : " + i);
-            System.out.println("min: " + min);
-            CodeExerciseUtil.printArray("Array before swap: ", a, true);
-            SortUtils.swap(a, i, min);
-            CodeExerciseUtil.printArray("Array after swap : ", a, true);
+            println("i  : " + i);
+            println("min: " + min);
+            printArray("Array before swap: ", a, true);
+            swap(a, i, min);
+            printArray("Array after swap : ", a, true);
         }
     }
 
@@ -35,34 +40,34 @@ public class KnownSorts {
      * @param r ending index section of interest
      */
     void insertion(int[] a, int l, int r) {
-        CodeExerciseUtil.printArray("In the beginning ", a, true);
+        printArray("In the beginning ", a, true);
         int i;
         // starting at the end of the array, move the smallest number all the way to
         // the beginning
         for (i = r; i > l; i--) {
-            SortUtils.compareAndExchange(a, i - 1, i);
+            compareAndExchange(a, i - 1, i);
         }
         for (i = l + 2; i <= r; i++) {
-            CodeExerciseUtil.printArray("2nd for loop ", a, true);
+            printArray("2nd for loop ", a, true);
             int j = i;
             int v = a[i];
-            System.out.println("a[" + i + "]: " + v);
-            System.out.println("a[" + (j - 1) + "]: " + a[(j - 1)]);
-            System.out.println("SortUtils.less(" + v + ", " + a[(j - 1)] + ")");
-            while (SortUtils.less(v, a[j - 1])) {
-                System.out.println("-----WHILE-----");
-                System.out.println("a[" + (j - 1) + "]: " + a[(j - 1)]);
-                System.out.println("a[" + j + "]: " + a[j]);
+            println("a[" + i + "]: " + v);
+            println("a[" + (j - 1) + "]: " + a[(j - 1)]);
+            println("utils.SortUtils.less(" + v + ", " + a[(j - 1)] + ")");
+            while (less(v, a[j - 1])) {
+                println("-----WHILE-----");
+                println("a[" + (j - 1) + "]: " + a[(j - 1)]);
+                println("a[" + j + "]: " + a[j]);
                 a[j] = a[j - 1];
-                System.out.println("a[" + (j - 1) + "]: " + a[(j - 1)]);
-                System.out.println("a[" + j + "]: " + a[j]);
+                println("a[" + (j - 1) + "]: " + a[(j - 1)]);
+                println("a[" + j + "]: " + a[j]);
                 j--;
-                System.out.println("SortUtils.less(" + v + ", " + a[(j - 1)] + ")");
-                System.out.println("-----WHILE-----");
+                println("utils.SortUtils.less(" + v + ", " + a[(j - 1)] + ")");
+                println("-----WHILE-----");
             }
             a[j] = v;
-            System.out.println("a[j] = v");
-            System.out.println("a[" + j + "]: " + v);
+            println("a[j] = v");
+            println("a[" + j + "]: " + v);
         }
     }
 
@@ -77,7 +82,7 @@ public class KnownSorts {
     void bubble(int[] a, int l, int r) {
         for (int i = l; i < r; i++) {
             for (int j = r; j > i; j--) {
-                SortUtils.compareAndExchange(a, j - 1, j);
+                compareAndExchange(a, j - 1, j);
             }
         }
     }
@@ -92,7 +97,7 @@ public class KnownSorts {
     void insertionSortExchangedBased(int[] a, int l, int r) {
         for (int i = l + 1; i <= r; i++) {
             for (int j = i; j > l; j--) {
-                SortUtils.compareAndExchange(a, j - 1, j);
+                compareAndExchange(a, j - 1, j);
             }
         }
     }
@@ -107,11 +112,12 @@ public class KnownSorts {
     void shell(int[] a, int l, int r) {
         int h;
         for (h = 1; h <= (r - 1) / 9; h = 3 * h + 1) ;
+        println("h" + h);
         for (; h > 0; h /= 3) {
             for (int i = 1 + h; i <= r; i++) {
                 int j = i;
                 int v = a[i];
-                while (j >= l + h && SortUtils.less(v, a[j - h])) {
+                while (j >= l + h && less(v, a[j - h])) {
                     a[j] = a[j - h];
                     j -= h;
                 }

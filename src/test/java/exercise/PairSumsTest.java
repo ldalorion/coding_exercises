@@ -1,4 +1,7 @@
+package exercise;
+
 import org.junit.Test;
+import utils.CodeExerciseUtil;
 
 public class PairSumsTest {
 
