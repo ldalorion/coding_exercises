@@ -32,46 +32,6 @@ public class KnownSorts {
     }
 
     /**
-     * Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.
-     * https://www.geeksforgeeks.org/insertion-sort/
-     *
-     * @param a array to sort
-     * @param l beginning index section of interest
-     * @param r ending index section of interest
-     */
-    void insertion(int[] a, int l, int r) {
-        printArray("In the beginning ", a, true);
-        int i;
-        // starting at the end of the array, move the smallest number all the way to
-        // the beginning
-        for (i = r; i > l; i--) {
-            compareAndExchange(a, i - 1, i);
-        }
-        for (i = l + 2; i <= r; i++) {
-            printArray("2nd for loop ", a, true);
-            int j = i;
-            int v = a[i];
-            println("a[" + i + "]: " + v);
-            println("a[" + (j - 1) + "]: " + a[(j - 1)]);
-            println("utils.SortUtils.less(" + v + ", " + a[(j - 1)] + ")");
-            while (less(v, a[j - 1])) {
-                println("-----WHILE-----");
-                println("a[" + (j - 1) + "]: " + a[(j - 1)]);
-                println("a[" + j + "]: " + a[j]);
-                a[j] = a[j - 1];
-                println("a[" + (j - 1) + "]: " + a[(j - 1)]);
-                println("a[" + j + "]: " + a[j]);
-                j--;
-                println("utils.SortUtils.less(" + v + ", " + a[(j - 1)] + ")");
-                println("-----WHILE-----");
-            }
-            a[j] = v;
-            println("a[j] = v");
-            println("a[" + j + "]: " + v);
-        }
-    }
-
-    /**
      * Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
      * https://www.geeksforgeeks.org/bubble-sort/
      *
@@ -110,11 +70,13 @@ public class KnownSorts {
      * @param r ending index section of interest
      */
     void shell(int[] a, int l, int r) {
-        int h;
-        for (h = 1; h <= (r - 1) / 9; h = 3 * h + 1) ;
-        println("h" + h);
+        int h = 1;
+        // instead of a sentinel, we're determining the h value
+        for (; h <= (r - l) / 9; h = 3 * h + 1) ;
+        // there is not initializer for h because it's at the top
         for (; h > 0; h /= 3) {
-            for (int i = 1 + h; i <= r; i++) {
+            // similar to insertion sort
+            for (int i = l + h; i <= r; i++) {
                 int j = i;
                 int v = a[i];
                 while (j >= l + h && less(v, a[j - h])) {
@@ -123,6 +85,35 @@ public class KnownSorts {
                 }
                 a[j] = v;
             }
+        }
+        // print statement on h at the end is 0 because it's an int. It typically would be a decimal point.
+    }
+
+    /**
+     * Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.
+     * https://www.geeksforgeeks.org/insertion-sort/
+     *
+     * @param a array to sort
+     * @param l beginning index section of interest
+     * @param r ending index section of interest
+     */
+    void insertion(int[] a, int l, int r) {
+        printArray("In the beginning ", a, true);
+        int i;
+        // starting at the end of the array, move the smallest number all the way to
+        // the beginning
+        for (i = r; i > l; i--) {
+            compareAndExchange(a, i - 1, i);
+        }
+        for (i = l + 2; i <= r; i++) {
+            printArray("2nd for loop ", a, true);
+            int j = i;
+            int v = a[i];
+            while (less(v, a[j - 1])) {
+                a[j] = a[j - 1];
+                j--;
+            }
+            a[j] = v;
         }
     }
 }
