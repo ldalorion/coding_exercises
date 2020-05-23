@@ -55,4 +55,13 @@ public class KnownSortsTest {
         printArray("After sort ", testArray, false);
         assert CodeExerciseTestUtils.isSorted(testArray);
     }
+
+    @Test
+    public void test_quick_sort() {
+        int[] testArray = CodeExerciseTestUtils.generateRandomNumbers(10);
+        printArray("Before sort ", testArray, false);
+        target.quick(testArray, 0, testArray.length - 1);
+        printArray("After sort ", testArray, false);
+        assert CodeExerciseTestUtils.isSorted(testArray);
+    }
 }

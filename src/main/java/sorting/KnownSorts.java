@@ -116,4 +116,31 @@ public class KnownSorts {
             a[j] = v;
         }
     }
+
+    void quick(int[] a, int l, int r) {
+        if (r <= l)
+            return;
+        int i = partition(a, l, r);
+        quick(a, l, i-1);
+        quick(a, i+1, r);
+    }
+
+    int partition(int[] a, int l, int r) {
+        int i = l-1, j=r;
+        int v = a[r];
+        for(;;) {
+            while (less(a[++i], v)) ;
+            while (less(v, a[--j])) {
+                if (j==l) {
+                    break;
+                }
+            }
+            if (i >= j) {
+                break;
+            }
+            swap(a, i, j);
+        }
+        swap(a, i, r);
+        return i;
+    }
 }
